@@ -1,0 +1,14 @@
+Name: MiraculumEdere
+Version: 1.0.0
+Title: MiraculumEdere
+Desc: 
+DLL: bin\MiraculumEdere.dll
+Dependencies:
+  - Name: Quintessential
+    Version: 0.6.2
+  - Name: Brimstone
+    Version: 2.2.1
+  - Name: HalvingMetallurgy
+    Version: 4.3.2
+  - Name: UncommonPrimes
+    Version: 0.1.5
