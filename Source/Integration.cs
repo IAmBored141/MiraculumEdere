@@ -85,8 +85,8 @@ public static class Integration
         HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Bismuth, new Pair<AtomType, AtomType>(MiraculumAtoms.Indium, MiraculumAtoms.Indium));
         HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Cerium, new Pair<AtomType, AtomType>(UAP.Nickel, MiraculumAtoms.Indium));
         HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Cobalt, new Pair<AtomType, AtomType>(UAP.Nickel, UAP.Nickel));
-        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Neodynium, new Pair<AtomType, AtomType>(MiraculumAtoms.Cerium, UAP.Nickel));
-        HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Platinum, new Pair<AtomType, AtomType>(MiraculumAtoms.Cerium, MiraculumAtoms.Cerium));
-        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Titanium, new Pair<AtomType, AtomType>(UAP.Bismuth, MiraculumAtoms.Cerium));
+        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Neodynium, new Pair<AtomType, AtomType>(MiraculumAtoms.Ferrum, UAP.Nickel));
+        HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Platinum, new Pair<AtomType, AtomType>(MiraculumAtoms.Ferrum, MiraculumAtoms.Ferrum));
+        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Titanium, new Pair<AtomType, AtomType>(UAP.Bismuth, MiraculumAtoms.Ferrum));
     }
 }
