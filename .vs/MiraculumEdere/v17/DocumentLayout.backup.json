@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A0671E1E-A577-41AD-8783-2D247C00A581}|Source\\MiraculumEdere.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\opus magnum\\mods\\miraculumedere\\source\\api.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0671E1E-A577-41AD-8783-2D247C00A581}|Source\\MiraculumEdere.csproj|solutionrelative:source\\api.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A0671E1E-A577-41AD-8783-2D247C00A581}|Source\\MiraculumEdere.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\opus magnum\\mods\\miraculumedere\\source\\integration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0671E1E-A577-41AD-8783-2D247C00A581}|Source\\MiraculumEdere.csproj|solutionrelative:source\\integration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,66 +30,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "API.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\API.cs",
+              "RelativeDocumentMoniker": "Source\\API.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\API.cs",
+              "RelativeToolTip": "Source\\API.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAqwIIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T00:09:57.87Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "Integration.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\Integration.cs",
+              "RelativeDocumentMoniker": "Source\\Integration.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\Integration.cs",
+              "RelativeToolTip": "Source\\Integration.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAQwGgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-24T02:50:16.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MiraculumAtoms.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\MiraculumAtoms.cs",
+              "RelativeDocumentMoniker": "Source\\MiraculumAtoms.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\MiraculumAtoms.cs",
+              "RelativeToolTip": "Source\\MiraculumAtoms.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAwFAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T03:57:41.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MiraculumEdere.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\MiraculumEdere.cs",
               "RelativeDocumentMoniker": "Source\\MiraculumEdere.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\MiraculumEdere.cs",
               "RelativeToolTip": "Source\\MiraculumEdere.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB4AAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwB8AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-19T06:01:50.666Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MiraculumGlyphs.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\MiraculumGlyphs.cs",
               "RelativeDocumentMoniker": "Source\\MiraculumGlyphs.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\MiraculumGlyphs.cs",
               "RelativeToolTip": "Source\\MiraculumGlyphs.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAADYBAAAAAAAAAAAQwC0CAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-19T05:48:40.074Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Integration.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\Integration.cs",
-              "RelativeDocumentMoniker": "Source\\Integration.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\Integration.cs",
-              "RelativeToolTip": "Source\\Integration.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAgwFQAAACOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-19T02:43:21.55Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MiraculumAtoms.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\MiraculumAtoms.cs",
-              "RelativeDocumentMoniker": "Source\\MiraculumAtoms.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Opus Magnum\\Mods\\MiraculumEdere\\Source\\MiraculumAtoms.cs",
-              "RelativeToolTip": "Source\\MiraculumAtoms.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T05:39:08.925Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
             }
           ]
         }

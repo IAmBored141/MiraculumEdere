@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiraculumEdere")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c986d44ecdc60cea1e77244fdc92e17afdb82881")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a50526c3b1e8230fcab141466bec85525a28c337")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiraculumEdere")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiraculumEdere")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

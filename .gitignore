@@ -1,2 +1,4 @@
-Source/bin/*
-Source/obj/*
+bin/*
+obj/*
+.vs/*
+.idea/*

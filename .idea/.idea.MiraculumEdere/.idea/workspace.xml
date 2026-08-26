@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b12488b0-cd1c-4c22-bb17-e907bb21d5b3" name="Changes" comment="" />
+    <list default="true" id="b12488b0-cd1c-4c22-bb17-e907bb21d5b3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.vs/MiraculumEdere/CopilotIndices/17.14.1700.50054/CodeChunks.db" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MiraculumEdere/CopilotIndices/17.14.1700.50054/CodeChunks.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MiraculumEdere/CopilotIndices/17.14.1700.50054/SemanticSymbols.db" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MiraculumEdere/CopilotIndices/17.14.1700.50054/SemanticSymbols.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MiraculumEdere/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MiraculumEdere/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MiraculumEdere/FileContentIndex/06b1612d-0492-4dd4-96c1-262bc5fa0dbd.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MiraculumEdere/FileContentIndex/0d9be7e9-2ca8-495c-abb2-1e939b929ae6.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MiraculumEdere/FileContentIndex/37210f75-62f3-4db1-a5f9-99b0e61bde9c.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MiraculumEdere/FileContentIndex/4abaa45e-68ba-4417-b5fd-f2d2dbb8cee3.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MiraculumEdere/FileContentIndex/7bb61ca0-9f5b-4c74-8f78-3710d2e0ceab.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MiraculumEdere/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MiraculumEdere/v17/.futdcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MiraculumEdere/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MiraculumEdere/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MiraculumEdere/v17/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MiraculumEdere/v17/DocumentLayout.backup.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MiraculumEdere/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MiraculumEdere/v17/DocumentLayout.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/miraculumedere.metadata.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/miraculumedere.metadata.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/miraculumedere.projects.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/miraculumedere.projects.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/miraculumedere.strings.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/miraculumedere.strings.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/textures/atoms/MiraculumEdere/SOHM/ferrum_symbol.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/textures/atoms/MiraculumEdere/SOHM/ferrum_symbol.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/textures/atoms/MiraculumEdere/stolen_texture_rimlight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/textures/parts/MiraculumEdere/reordering/base - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/textures/parts/MiraculumEdere/reordering/base.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/textures/parts/MiraculumEdere/reordering/glow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/textures/parts/MiraculumEdere/reordering/stroke.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/API.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/API.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Integration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Integration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MiraculumAtoms.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MiraculumAtoms.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MiraculumEdere.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MiraculumEdere.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MiraculumEdere.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MiraculumEdere.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MiraculumGlyphs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MiraculumGlyphs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/bin/Debug/MiraculumEdere.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Source/bin/Debug/MiraculumEdere.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/bin/Debug/MiraculumEdere.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Source/bin/Debug/MiraculumEdere.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Source/obj/Debug/MiraculumEdere.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MiraculumEdere.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MiraculumEdere.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MiraculumEdere.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MiraculumEdere.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quintessential.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/quintessential.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6,
@@ -18,9 +61,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false"
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="TaskManager">
@@ -32,9 +82,11 @@
       <updated>1787032746484</updated>
       <workItem from="1787032746893" duration="1000" />
       <workItem from="1787097837606" duration="1000" />
+      <workItem from="1787525447448" duration="26000" />
     </task>
     <servers />
   </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

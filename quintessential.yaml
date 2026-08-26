@@ -12,3 +12,7 @@ Dependencies:
     Version: 4.3.2
   - Name: UncommonPrimes
     Version: 0.1.5
+  - Name: Neuvolics
+    Version: 1.3.4
+  - Name: FalseAether
+    Version: 0.0.3

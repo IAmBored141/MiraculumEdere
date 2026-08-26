@@ -28,6 +28,9 @@
 		<Reference Include="Brimstone">
 		  <HintPath>..\..\raw dll\Brimstone.dll</HintPath>
 		</Reference>
+		<Reference Include="FalseAether">
+		  <HintPath>..\..\raw dll\FalseAether.dll</HintPath>
+		</Reference>
 		<Reference Include="HalvingMetallurgy">
 		  <HintPath>..\..\raw dll\HalvingMetallurgy.dll</HintPath>
 		</Reference>
@@ -52,11 +55,23 @@
 		<Reference Include="MonoMod.Utils">
 			<HintPath>$(OpusPath)\MonoMod.Utils.dll</HintPath>
 		</Reference>
+		<Reference Include="Neuvolics">
+		  <HintPath>..\..\raw dll\Neuvolics.dll</HintPath>
+		</Reference>
+		<Reference Include="PrimaMateria">
+		  <HintPath>..\..\raw dll\PrimaMateria.dll</HintPath>
+		</Reference>
 		<Reference Include="ReductiveMetallurgy">
 		  <HintPath>..\..\raw dll\ReductiveMetallurgy.dll</HintPath>
 		</Reference>
+		<Reference Include="TrueAn">
+		  <HintPath>..\..\raw dll\TrueAn.dll</HintPath>
+		</Reference>
 		<Reference Include="UncommonPrimes">
 		  <HintPath>..\..\raw dll\UncommonPrimes.dll</HintPath>
+		</Reference>
+		<Reference Include="Vaca">
+		  <HintPath>..\..\raw dll\Vaca.dll</HintPath>
 		</Reference>
 		<Reference Include="YamlDotNet">
 			<HintPath>$(OpusPath)\YamlDotNet.dll</HintPath>

@@ -7,18 +7,23 @@ using Brimstone;
 using Quintessential;
 using Texture = class_256;
 using HalvingMetallurgy;
+using Vanilla = Brimstone.API.VanillaAtoms;
+using HM = HalvingMetallurgy.Exports.AtomExports;
 using UAP = UncommonPrimes.UncommonPrimesAtoms;
+using Vacancy = Vaca.MainClass;
+using FA = FalseAether.Atoms;
+//using NV = Neuvolics.Atoms;
+using TA = TrueAnimismus.ModdedAtoms;
 
 namespace MiraculumEdere;
 
 public static class Integration
 {
-    public static int MetallicityOffset = 64; //this is held together with hopes and dreams
 
     public static void SecondOrderHalfMetals()
     {
-        //to do: add vaca here
-        //metalicity 1 left empty for whatever wheat wants to put there
+        API.AddSecondOrderToDictionary(Vacancy.VacaAtom, 0);
+        API.AddSecondOrderToDictionary(UAP.Arsenic, 1);
         API.AddSecondOrderToDictionary(MiraculumAtoms.Aluminium, 2);
         API.AddSecondOrderToDictionary(UAP.Zinc, 3);
         API.AddSecondOrderToDictionary(MiraculumAtoms.Indium, 4);
@@ -36,14 +41,15 @@ public static class Integration
         ReductiveMetallurgy.API.addRejectionRule(MiraculumAtoms.Ferrum, MiraculumAtoms.Indium);
         ReductiveMetallurgy.API.addRejectionRule(MiraculumAtoms.Cerium, MiraculumAtoms.Ferrum);
         ReductiveMetallurgy.API.addRejectionRule(MiraculumAtoms.Neodynium, MiraculumAtoms.Cerium);
-        ReductiveMetallurgy.API.addRejectionRule(MiraculumAtoms.Titanium, MiraculumAtoms.Neodynium);    
+        ReductiveMetallurgy.API.addRejectionRule(MiraculumAtoms.Titanium, MiraculumAtoms.Neodynium);
 
         //division- i mean deposition
-        ReductiveMetallurgy.API.addDepositionRule(MiraculumAtoms.Indium, UAP.Zinc, MiraculumAtoms.Aluminium);
-        ReductiveMetallurgy.API.addDepositionRule(MiraculumAtoms.Ferrum, MiraculumAtoms.Indium, UAP.Zinc);
-        ReductiveMetallurgy.API.addDepositionRule(MiraculumAtoms.Cerium, UAP.Nickel, MiraculumAtoms.Indium);
-        ReductiveMetallurgy.API.addDepositionRule(MiraculumAtoms.Neodynium, MiraculumAtoms.Ferrum, UAP.Nickel);
-        ReductiveMetallurgy.API.addDepositionRule(MiraculumAtoms.Titanium, UAP.Bismuth, MiraculumAtoms.Ferrum);
+        //lossful
+        ReductiveMetallurgy.API.addDepositionRule(MiraculumAtoms.Indium, Vanilla.lead, HM.GetBeryl());
+        ReductiveMetallurgy.API.addDepositionRule(MiraculumAtoms.Ferrum, HM.GetWolfram(), Vanilla.lead);
+        ReductiveMetallurgy.API.addDepositionRule(MiraculumAtoms.Cerium, Vanilla.tin, HM.GetWolfram());
+        ReductiveMetallurgy.API.addDepositionRule(MiraculumAtoms.Neodynium, HM.GetVulcan(), Vanilla.tin);
+        ReductiveMetallurgy.API.addDepositionRule(MiraculumAtoms.Titanium, Vanilla.iron, HM.GetVulcan());
 
         //proliferation
         ReductiveMetallurgy.API.addProliferationRule(MiraculumAtoms.Aluminium);
@@ -54,6 +60,7 @@ public static class Integration
         ReductiveMetallurgy.API.addProliferationRule(MiraculumAtoms.Titanium);
 
         //halves
+        HalvingMetallurgy.API.HalvesDictionary.Add(UAP.Arsenic, MiraculumAtoms.Aluminium);
         HalvingMetallurgy.API.HalvesDictionary.Add(MiraculumAtoms.Aluminium, UAP.Zinc);
         HalvingMetallurgy.API.HalvesDictionary.Add(UAP.Zinc, MiraculumAtoms.Indium);
         HalvingMetallurgy.API.HalvesDictionary.Add(MiraculumAtoms.Indium, UAP.Nickel);
@@ -76,17 +83,45 @@ public static class Integration
         HalvingMetallurgy.API.OsmosisDictionary.Add(UAP.Nickel, MiraculumAtoms.Indium);
         HalvingMetallurgy.API.OsmosisDictionary.Add(MiraculumAtoms.Indium, UAP.Zinc);
         HalvingMetallurgy.API.OsmosisDictionary.Add(UAP.Zinc, MiraculumAtoms.Aluminium);
+        HalvingMetallurgy.API.OsmosisDictionary.Add(MiraculumAtoms.Aluminium, UAP.Arsenic);
 
         //shearing
-        HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Zinc, new Pair<AtomType, AtomType>(MiraculumAtoms.Aluminium, MiraculumAtoms.Aluminium));
-        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Indium, new Pair<AtomType, AtomType>(UAP.Zinc, MiraculumAtoms.Aluminium));
-        HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Nickel, new Pair<AtomType, AtomType>(UAP.Zinc, UAP.Zinc));
-        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Ferrum, new Pair<AtomType, AtomType>(MiraculumAtoms.Indium, UAP.Zinc));
-        HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Bismuth, new Pair<AtomType, AtomType>(MiraculumAtoms.Indium, MiraculumAtoms.Indium));
-        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Cerium, new Pair<AtomType, AtomType>(UAP.Nickel, MiraculumAtoms.Indium));
-        HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Cobalt, new Pair<AtomType, AtomType>(UAP.Nickel, UAP.Nickel));
-        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Neodynium, new Pair<AtomType, AtomType>(MiraculumAtoms.Ferrum, UAP.Nickel));
-        HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Platinum, new Pair<AtomType, AtomType>(MiraculumAtoms.Ferrum, MiraculumAtoms.Ferrum));
-        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Titanium, new Pair<AtomType, AtomType>(UAP.Bismuth, MiraculumAtoms.Ferrum));
+        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Aluminium, new Pair<AtomType, AtomType>(UAP.Arsenic, UAP.Arsenic));
+        HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Zinc, new Pair<AtomType, AtomType>(MiraculumAtoms.Aluminium, UAP.Arsenic));
+        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Indium, new Pair<AtomType, AtomType>(MiraculumAtoms.Aluminium, MiraculumAtoms.Aluminium));
+        HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Nickel, new Pair<AtomType, AtomType>(UAP.Zinc, MiraculumAtoms.Aluminium));
+        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Ferrum, new Pair<AtomType, AtomType>(UAP.Zinc, UAP.Zinc));
+        HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Bismuth, new Pair<AtomType, AtomType>(MiraculumAtoms.Indium, UAP.Zinc));
+        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Cerium, new Pair<AtomType, AtomType>(MiraculumAtoms.Indium, MiraculumAtoms.Indium));
+        HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Cobalt, new Pair<AtomType, AtomType>(UAP.Nickel, MiraculumAtoms.Indium));
+        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Neodynium, new Pair<AtomType, AtomType>(UAP.Nickel, UAP.Nickel));
+        HalvingMetallurgy.API.ShearingDictionary.Add(UAP.Platinum, new Pair<AtomType, AtomType>(MiraculumAtoms.Ferrum, UAP.Nickel));
+        HalvingMetallurgy.API.ShearingDictionary.Add(MiraculumAtoms.Titanium, new Pair<AtomType, AtomType>(MiraculumAtoms.Ferrum, MiraculumAtoms.Ferrum));
+    }
+     public static void reductiveneuvolurgy()
+    {
+        //API.AddDerivationRecipe(Vanilla.salt,Vanilla.quicksilver,)
+    }
+    public static void ExtendedAnimismus() {
+        API.AddAnimismus(Vanilla.mors, -1, 0, Vanilla.salt);
+        API.AddAnimismus(FA.Inops, -1, 1, Vanilla.salt);
+        API.AddAnimismus(FA.Illustra, 0, 1, Vanilla.salt);
+        API.AddAnimismus(FA.Capax, 1, 1, Vanilla.salt);
+        API.AddAnimismus(Vanilla.vitae, 1, 0, Vanilla.salt);
+        API.AddAnimismus(FA.Phasmus, 1, -1, Vanilla.salt);
+        API.AddAnimismus(FA.Turpis, 0, -1, Vanilla.salt);
+        API.AddAnimismus(FA.Aegero, -1, -1, Vanilla.salt);
+        API.AddAnimismus(TA.GreyMors, -2, 0, Vanilla.salt);
+        API.AddAnimismus(TA.TrueMors, -3, 0, Vanilla.salt);
+        API.AddAnimismus(TA.RedVitae, 2, 0, Vanilla.salt);
+        API.AddAnimismus(TA.TrueVitae, 3, 0, Vanilla.salt);
+        API.AddAnimismus(UAP.Muto, 1, 0, Vanilla.quicksilver);
+        API.AddAnimismus(UAP.Fixus, -1, 0, Vanilla.quicksilver);
+        API.AddAnimismus(UAP.PaleMuto, 2, 0, Vanilla.quicksilver);
+        API.AddAnimismus(UAP.DarkFixus, -2, 0, Vanilla.quicksilver);
+        API.AddAnimismus(UAP.TrueMuto, 3, 0, Vanilla.quicksilver);
+        API.AddAnimismus(UAP.TrueFixus, -3, 0, Vanilla.quicksilver);
+        API.AddAnimismus(Vanilla.salt, 0, 0, Vanilla.salt);
+        API.AddAnimismus(Vanilla.quicksilver, 0, 0, Vanilla.quicksilver);
     }
 }
