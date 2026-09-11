@@ -17,7 +17,7 @@ using Vanilla = Brimstone.API.VanillaAtoms;
 using FA = FalseAether.Atoms;
 using System.Text.RegularExpressions;
 using RM = ReductiveMetallurgy;
-using TS = TrueSalt.TrueSalt;
+using TS = TrueSalt.TrueSalt;   
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using PrimaMateria;
@@ -216,14 +216,14 @@ public static class MiraculumGlyphs
             renderer.method_523(Textures.baseConjurgation, new Vector2(1f, 1f), new Vector2(125f, 48f), 0);
             Brimstone.API.GetRenderingHelpers(part, pos, editor, out PartSimState pss, out PartDataWrapper pdw, out float time);
             Brimstone.API.DrawIris(renderer, pdw, conjurgationOutput, time, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431);
-            renderer.method_523(Textures.Bowl, new Vector2(1f, 1f), new Vector2(43f, 48f), 0);
-            Helpers.DrawHole(125f, 48f, renderer);
+            renderer.method_528(Textures.Bowl, conjurgationBuffer, Vector2.Zero);
+            Helpers.DrawHole(conjurgationInput, renderer);
         });
         QApi.AddPartType(Derivation, static (part, pos, editor, renderer) =>
         {
             renderer.method_523(Textures.baseDerivation, new Vector2(0f, 0f), new Vector2(92f, 120f), 0);
-            Helpers.DrawHole(0f, 120f, renderer);
-            Helpers.DrawHole(82f, 120f, renderer);
+            Helpers.DrawHole(derivationInputA, renderer);
+            Helpers.DrawHole(derivationInputB, renderer);
             Brimstone.API.GetRenderingHelpers(part, pos, editor, out PartSimState pss, out PartDataWrapper pdw, out float time);
             Brimstone.API.DrawIris(renderer, pdw, derivationOutput, time, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431);
 
@@ -232,40 +232,52 @@ public static class MiraculumGlyphs
         QApi.AddPartType(Ascent, static (part, pos, editor, renderer) =>
         {
             renderer.method_523(Textures.baseAscent, new Vector2(0f, 0f), new Vector2(41f, 48f), 0);
-            renderer.method_523(Textures.Bowl, new Vector2(1f, 1f), new Vector2(41f, 48f), 0);
+            renderer.method_528(Textures.Bowl, ascentBowl, Vector2.Zero);
 
 
         });
         QApi.AddPartType(Deconstruction, static (part, pos, editor, renderer) =>
         {
             renderer.method_523(Textures.baseDeconstruction, new Vector2(0f, 0f), new Vector2(125f, 48f), 0);
-            renderer.method_523(Textures.Bowl, new Vector2(1f, 1f), new Vector2(41f, 48f), 0);
-            renderer.method_523(Textures.Bowl, new Vector2(0f, 0f), new Vector2(-41f, 48f), 0);
+            renderer.method_528(Textures.Bowl, deconInput, Vector2.Zero);
+            renderer.method_528(Textures.Bowl, deconMediate, Vector2.Zero);
             Brimstone.API.GetRenderingHelpers(part, pos, editor, out PartSimState pss, out PartDataWrapper pdw, out float time);
             Brimstone.API.DrawIris(renderer, pdw, deconOutput, time, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431);
         });
         QApi.AddPartType(Convolution, static (part, pos, editor, renderer) =>
         {
             renderer.method_523(Textures.baseConvolution, new Vector2(0f, 0f), new Vector2(125f, 190f), 0);
-
+            Helpers.DrawHole(convolutionInput, renderer);
+            Brimstone.API.GetRenderingHelpers(part, pos, editor, out PartSimState pss, out PartDataWrapper pdw, out float time);
+            renderer.method_528(Textures.Bowl, convolutionBowl, Vector2.Zero);
+            renderer.method_529(Neuvolics.Textures.BowlSymbol.Neumetal, convolutionBowl, Vector2.Zero);
+            Brimstone.API.DrawIris(renderer, pdw, convolutionOutputFrix, time,Neuvolics.Textures.Irises.Frixon, pss.field_2743 ? pss.field_2744[0] == NV.AtomExports.GetFrixon() ? Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431 : struct_18.field_1431);
+            Brimstone.API.DrawIris(renderer, pdw, convolutionOutputGel, time, Neuvolics.Textures.Irises.Gelaron, pss.field_2743 ? pss.field_2744[0] == NV.AtomExports.GetGelaron() ?  Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431 : struct_18.field_1431);
 
         });
         QApi.AddPartType(Fragmentation, static (part, pos, editor, renderer) =>
         {
             renderer.method_523(Textures.baseFragmentation, new Vector2(0f, 0f), new Vector2(123f, 119f), 0);
+            Helpers.DrawHole(fragmentationInput, renderer);
+            Brimstone.API.GetRenderingHelpers(part, pos, editor, out PartSimState pss, out PartDataWrapper pdw, out float time);
+            renderer.method_528(Textures.Bowl, fragmentationBowl, Vector2.Zero);
+            renderer.method_529(Neuvolics.Textures.BowlSymbol.Neumetal, fragmentationBowl, Vector2.Zero);
+            Brimstone.API.DrawIris(renderer, pdw, fragmentationOutputCW, time, Neuvolics.Textures.Irises.Neumetal,   pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431);
+            Brimstone.API.DrawIris(renderer, pdw, fragmentationOutputCCW, time, Neuvolics.Textures.Irises.Neumetal, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[1]) : struct_18.field_1431);
+
 
 
         });
         QApi.AddPartType(Judgement, static (part, pos, editor, renderer) =>
         {
             renderer.method_523(Textures.baseJudgement, new Vector2(0f, 0f), new Vector2(125f, 48f), 0);
-            renderer.method_523(Textures.Bowl, new Vector2(1f, 1f), new Vector2(125f, 48f), 0);
-            renderer.method_523(Textures.Bowl, new Vector2(1f, 1f), new Vector2(-41f, 48f), 0);
+            renderer.method_528(Textures.Bowl, judgementBowlIn, Vector2.Zero);
+            renderer.method_528(Textures.Bowl, judgementBowlOut, Vector2.Zero);
         });
         QApi.AddPartType(Shattering, static (part, pos, editor, renderer) =>
         {
             renderer.method_523(Textures.baseShattering, new Vector2(0f, 0f), new Vector2(205f, 113f), 0);
-            renderer.method_523(Textures.Bowl, new Vector2(0f, 0f), new Vector2(41f, 48f), 0);
+            renderer.method_528(Textures.Bowl, shatterInput, Vector2.Zero);
             Brimstone.API.GetRenderingHelpers(part, pos, editor, out PartSimState pss, out PartDataWrapper pdw, out float time);
             Brimstone.API.DrawIris(renderer, pdw, shatterOutAnti, time, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[1]) : struct_18.field_1431);
             Brimstone.API.DrawIris(renderer, pdw, shatterOutLead, time, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431);
@@ -282,7 +294,7 @@ public static class MiraculumGlyphs
                 }
                 else
                 {
-                    Helpers.DrawHoleFromHex(refractIrisA, renderer);
+                    Helpers.DrawHole(refractIrisA, renderer);
                 }
                 if (pss.field_2744[1] != Vanilla.mors)
                 {
@@ -290,7 +302,7 @@ public static class MiraculumGlyphs
                 }
                 else
                 {
-                    Helpers.DrawHoleFromHex(refractIrisB, renderer);
+                    Helpers.DrawHole(refractIrisB, renderer);
                 }
                 if (pss.field_2744[2] != Vanilla.mors)
                 {
@@ -298,22 +310,22 @@ public static class MiraculumGlyphs
                 }
                 else
                 {
-                    Helpers.DrawHoleFromHex(refractIrisC, renderer);
+                    Helpers.DrawHole(refractIrisC, renderer);
                 }
             } else
             {
-                Helpers.DrawHoleFromHex(refractIrisA, renderer);
-                Helpers.DrawHoleFromHex(refractIrisB, renderer);
-                Helpers.DrawHoleFromHex(refractIrisC, renderer);
+                Helpers.DrawHole(refractIrisA, renderer);
+                Helpers.DrawHole(refractIrisB, renderer);
+                Helpers.DrawHole(refractIrisC, renderer);
             }
         });
         QApi.AddPartType(Subjection, static (part, pos, editor, renderer) =>
             {
                 renderer.method_523(Textures.baseSubjection, new Vector2(0f, 0f), new Vector2(123f, 48f), 0);
-                renderer.method_523(Textures.MetalBowl, new Vector2(0f, 0f), new Vector2(123f,48f), 0);
-                renderer.method_523(Textures.MetalBowl, new Vector2(0f, 0f), new Vector2(48f, 48f), 0);
-                renderer.method_523(Textures.subjectUp, new Vector2(0f, 0f), new Vector2(0f, 24f), 0);
-                renderer.method_523(Textures.subjectDown, new Vector2(0f, 0f), new Vector2(82f, 24f), 0);
+                renderer.method_528(Textures.MetalBowl, SubjectionHigh, Vector2.Zero);
+                renderer.method_528(Textures.MetalBowl, SubjectionLow, Vector2.Zero);
+                renderer.method_529(Textures.subjectUp, SubjectionHigh, Vector2.Zero);
+                renderer.method_529(Textures.subjectDown, SubjectionLow, Vector2.Zero);
         });
 
 
@@ -338,7 +350,7 @@ public static class MiraculumGlyphs
                     }
                     if (!sim.FindAtomRelative(part, conjurgationBuffer).method_99(out AtomReference bufferAtom))
                     {
-                        if (inputAtom.field_2280 != Brimstone.API.VanillaAtoms.iron && inputAtom.field_2280 != MiraculumAtoms.Ferrum) //ferrum <-> iron is free, anyway
+                        if (inputAtom.field_2280 != Vanilla.iron && inputAtom.field_2280 != MiraculumAtoms.Ferrum) //ferrum <-> iron is free, anyway
                         {
                             return;
                         }
@@ -447,7 +459,7 @@ public static class MiraculumGlyphs
                     pss.field_2744 = new AtomType[1] { outputAtom };
                     if (bufferExists)
                     {
-                        Helpers.RunTransmuteAnimation(SEB, bufferAtom); 
+                        Helpers.RunTransmuteAnimation(SEB, bufferAtom);
                     }
                     Brimstone.API.AddSmallCollider(sim, part, output);
                 }
@@ -762,9 +774,10 @@ public static class MiraculumGlyphs
                     pss.field_2743 = true;
                     pss.field_2744 = new AtomType[2] { Vanilla.lead, AlchemicalInversions.Atoms.AntiLead };
                     Texture[] disposalFlashAnimation = class_238.field_1989.field_90.field_240;
-                    Vector2 animationPosition = RM.MainClass.hexGraphicalOffset(part.method_1161() + new HexIndex(0,0).Rotated(part.method_1163())) + new Vector2(80f, 0f);
+                    Vector2 animationPosition = RM.MainClass.hexGraphicalOffset(part.method_1161() + new HexIndex(0, 0).Rotated(part.method_1163())) + new Vector2(80f, 0f);
                     SEB.field_3936.Add(new class_228(SEB, (enum_7)1, animationPosition, disposalFlashAnimation, 30f, Vector2.Zero, 0f));
-                } else if (pss.field_2743)
+                }
+                else if (pss.field_2743)
                 {
                     Brimstone.API.AddAtom(sim, part, shatterOutLead, pss.field_2744[0]);
                     Brimstone.API.AddAtom(sim, part, shatterOutAnti, pss.field_2744[1]);
@@ -786,18 +799,21 @@ public static class MiraculumGlyphs
                         sim.FindAtomRelative(part, refractIrisA).method_99(out inputA);
                         sim.FindAtomRelative(part, refractIrisB).method_99(out inputB);
                         emptyIris = "C";
-                    } else if (hasA && !hasB  && hasC)
+                    }
+                    else if (hasA && !hasB && hasC)
                     {
                         pss.field_2744 = new AtomType[3] { Vanilla.mors, Vanilla.vitae, Vanilla.mors };
                         sim.FindAtomRelative(part, refractIrisA).method_99(out inputA);
                         sim.FindAtomRelative(part, refractIrisC).method_99(out inputB);
                         emptyIris = "B";
-                    } else if (!hasA && hasB && hasC)
+                    }
+                    else if (!hasA && hasB && hasC)
                     {
                         pss.field_2744 = new AtomType[3] { Vanilla.vitae, Vanilla.mors, Vanilla.mors };
                         sim.FindAtomRelative(part, refractIrisB).method_99(out inputA);
                         sim.FindAtomRelative(part, refractIrisC).method_99(out inputB);
-                    } else
+                    }
+                    else
                     {
                         return;
                     }
@@ -822,25 +838,30 @@ public static class MiraculumGlyphs
                             if (emptyIris == "A")
                             {
                                 Brimstone.API.AddSmallCollider(sim, part, refractIrisA);
-                            } else if (emptyIris == "B")
+                            }
+                            else if (emptyIris == "B")
                             {
                                 Brimstone.API.AddSmallCollider(sim, part, refractIrisB);
-                            } else
+                            }
+                            else
                             {
                                 Brimstone.API.AddSmallCollider(sim, part, refractIrisC);
                             }
                         }
                     }
-                } else if (pss.field_2743)
+                }
+                else if (pss.field_2743)
                 {
                     AtomType[] A = new AtomType[3] { Noble.Alpha, Noble.Beta, Noble.Gamma };
                     if (A.Contains(pss.field_2744[0]))
                     {
                         Brimstone.API.AddAtom(sim, part, refractIrisA, pss.field_2744[0]);
-                    } else if (A.Contains(pss.field_2744[1]))
+                    }
+                    else if (A.Contains(pss.field_2744[1]))
                     {
                         Brimstone.API.AddAtom(sim, part, refractIrisB, pss.field_2744[1]);
-                    } else
+                    }
+                    else
                     {
                         Brimstone.API.AddAtom(sim, part, refractIrisC, pss.field_2744[2]);
                     }
@@ -867,7 +888,7 @@ public static class MiraculumGlyphs
                     if (Helpers.PromoteAtom(atomHigh.field_2280, metallicity, out AtomType output))
                     {
                         Brimstone.API.RemoveAtom(atomLow);
-                        Helpers.RunDisposeAnimate(SubjectionLow, part, SEB);
+                        Helpers.DisposeAnimation(SubjectionLow, part, SEB);
                         Brimstone.API.ChangeAtom(atomHigh, output);
                         Helpers.RunTransmuteAnimation(SEB, atomHigh);
                     }
@@ -879,7 +900,7 @@ public static class MiraculumGlyphs
                     {
                         return;
                     }
-                    if (API.negativeMetals.Contains(atomLow.field_2280)) 
+                    if (API.negativeMetals.Contains(atomLow.field_2280))
                     {
                         if (!Helpers.PromoteAtom(atomLow.field_2280, 2, out AtomType output))
                         {
@@ -887,7 +908,8 @@ public static class MiraculumGlyphs
                         }
                         Brimstone.API.ChangeAtom(atomLow, output);
                         Brimstone.API.AddAtom(sim, part, SubjectionHigh, MiraculumAtoms.Quicktin);
-                    } else
+                    }
+                    else
                     {
                         if (!Helpers.PromoteAtom(atomLow.field_2280, -2, out AtomType output))
                         {
@@ -895,9 +917,9 @@ public static class MiraculumGlyphs
                         }
                         Brimstone.API.ChangeAtom(atomLow, output);
                         Brimstone.API.AddAtom(sim, part, SubjectionHigh, Vanilla.quicksilver);
-                        Helpers.RunDisposeAnimate(SubjectionHigh, part, SEB);
-                        Helpers.RunTransmuteAnimation(SEB, atomLow);
                     }
+                    Helpers.DisposeAnimation(SubjectionHigh, part, SEB);
+                    Helpers.RunTransmuteAnimation(SEB, atomLow);
                 }
             }
             else if (type == class_191.field_1776) // calcification
@@ -932,6 +954,33 @@ public static class MiraculumGlyphs
                 }
                 Brimstone.API.ChangeAtom(target, output);
                 Helpers.RunTransmuteAnimation(SEB, target);
+            }
+            else if (type == class_191.field_1778) // projection
+            {
+                if (!sim.FindAtomRelative(part, new HexIndex(0,0)).method_99(out AtomReference quix))
+                {
+                    return;
+                }
+                if (!sim.FindAtomRelative(part, new HexIndex(1, 0)).method_99(out AtomReference metal))
+                {
+                    return;
+                }
+                if (!API.Quixinary.TryGetValue(quix.field_2280, out int value))
+                {
+                    return;
+                }
+                if (value == 0 || value == 1 || value == 2)
+                {
+                    return; // already handled
+                }
+                if (!Helpers.PromoteAtom(metal.field_2280, value, out AtomType output))
+                {
+                    return;
+                }
+                Brimstone.API.RemoveAtom(quix);
+                Brimstone.API.DrawFallingAtom(SEB, quix);
+                Brimstone.API.ChangeAtom(metal, output);
+                Helpers.RunTransmuteAnimation(SEB, metal);
             }
         });
         QApi.RunAfterCycle((sim, first) => {

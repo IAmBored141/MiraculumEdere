@@ -66,7 +66,7 @@ public static class Helpers
         Atom.field_2279.field_2276 = new class_168(SEB, 0, (enum_132)1, Atom.field_2280, class_238.field_1989.field_81.field_614, 30f);
     }
 
-    public static void RunDisposeAnimate(HexIndex pos, Part part, SolutionEditorBase SEB)
+    public static void DisposeAnimation(HexIndex pos, Part part, SolutionEditorBase SEB)
     {
         Texture[] disposalFlashAnimation = class_238.field_1989.field_90.field_240;
         Vector2 animationPosition = ReductiveMetallurgy.MainClass.hexGraphicalOffset(part.method_1161() + pos.Rotated(part.method_1163())) + new Vector2(80f, 0f);
@@ -97,15 +97,10 @@ public static class Helpers
         }
     }
 
-    public static void DrawHole(float x, float y, PartRenderHelper renderer)
+    public static void DrawHole(HexIndex pos, PartRenderHelper renderer)
     {
-        renderer.method_523(Textures.Hole_Shadow, new Vector2(1f, 1f), new Vector2(x, y), 0);
-        renderer.method_523(Textures.Input_Ring, new Vector2(1f, 1f), new Vector2(x, y), 0);
+        renderer.method_528(Textures.Hole_Shadow, pos, Vector2.Zero);
+        renderer.method_529(Textures.Input_Ring, pos, Vector2.Zero);
     }
 
-    public static void DrawHoleFromHex(HexIndex pos, PartRenderHelper renderer)
-    {
-        Vector2 Vector = Brimstone.API.HexIndexToVector2(pos);
-        DrawHole(48-Vector.X, 41-Vector.Y, renderer);
-    }
 }
