@@ -1,4 +1,5 @@
 bin/*
-obj/*
+Source/bin/*
+Source/obj/*
 .vs/*
 .idea/*
