@@ -11,7 +11,7 @@ namespace MiraculumEdere;
 
 public class MiraculumEdere : QuintessentialMod
 {
-    private static string logPrefix = "Theory: ";
+    private static readonly string logPrefix = "Theory: ";
    
     public override void Load()
     {
@@ -35,7 +35,10 @@ public class MiraculumEdere : QuintessentialMod
         Integration.SecondOrderHalfMetals();
         Logger.Log(logPrefix + "Animismus related stuff...");
         Integration.ExtendedAnimismus();
-
+        Logger.Log(logPrefix + "Quix...");
+        Integration.Quixulurgy();
+        Logger.Log(logPrefix + "More Cardinals....");
+        Integration.ExtraCardinals();
 
         Logger.Log(logPrefix + "Trying to add glyphs...");
         MiraculumGlyphs.AddGlyphs();
@@ -45,6 +48,10 @@ public class MiraculumEdere : QuintessentialMod
         QApi.AddPuzzlePermission("Miraculum:Fragmentation", "Glyph of Fragmentation", "Miraculum Edere");
         QApi.AddPuzzlePermission("Miraculum:Derivation", "Glyph of Derivation", "Miraculum Edere");
         QApi.AddPuzzlePermission("Miraculum:Judgement", "Glyph of Judgement", "Miraculum Edere");
+        QApi.AddPuzzlePermission("Miraculum:Deconstruction", "Glyph of Deconstruction", "Miraculum Edere");
+        QApi.AddPuzzlePermission("Miraculum:Shattering", "Glyph of Shattering", "Miraculum Edere");
+        QApi.AddPuzzlePermission("Miraculum:Refraction", "Glyph of Refraction", "Miraculum Edere");
+        QApi.AddPuzzlePermission("Miraculum:Subjection", "Glyph of Subjection", "Miraculum Edere");
 
         Logger.Log(logPrefix + "I- I'm done! Did it work?");
         

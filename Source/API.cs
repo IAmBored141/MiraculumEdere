@@ -10,6 +10,7 @@ using HalvingMetallurgy;
 using UncommonPrimes;
 using PM = PrimaMateria.PrimaMateriaAtoms;
 using Vanilla = Brimstone.API.VanillaAtoms;
+using TS = TrueSalt.TrueSalt;
 
 namespace MiraculumEdere;
 
@@ -17,77 +18,74 @@ public static class API
 {
     public static readonly Dictionary<AtomType, int> secondordertodoubledmetallicity = new();
     public static readonly Dictionary<int, AtomType> doubledmetalicitytosecondordermetal = new();
+    public static readonly Dictionary<AtomType, int> metaltodoubledmetallicity = new();
+    public static readonly Dictionary<int, AtomType> doubledmetalicitytometal = new();
+    public static readonly List<AtomType> negativeMetals = new();
+    public static readonly List<AtomType> CalicifyToCaclity = new();
+
+    public static readonly Dictionary<string, AtomType> dupeRecipe = new();
+    public static void AddDupeRecipe(AtomType target, AtomType source, AtomType output)
+    {
+        dupeRecipe.Add(target.field_2284 + source.field_2284, output);
+    } // dont add the converse
+
+    public static bool ReadDupeRecipe(AtomType target, AtomType source, out AtomType output)
+    {
+        if (!dupeRecipe.TryGetValue(target.field_2284 + source.field_2284, out output))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
     public static void AddSecondOrderToDictionary(AtomType metal, int doubledmetallicity)
     {
         secondordertodoubledmetallicity.Add(metal, doubledmetallicity);
         doubledmetalicitytosecondordermetal.Add(doubledmetallicity, metal);
     }
 
-    public static readonly Dictionary<Pair<AtomType, AtomType>, AtomType> derivationRecipe = new();
+    public static void AddMetalToDictionary(AtomType metal, int doubledmetallicity)
+    {
+        metaltodoubledmetallicity.Add(metal, doubledmetallicity);
+        doubledmetalicitytometal.Add(doubledmetallicity, metal);
+        if (doubledmetallicity < 0)
+        {
+            negativeMetals.Add(metal);
+        }
+    }
+
+    public static readonly Dictionary<string, AtomType> derivationRecipe = new();
+
+    public static readonly Dictionary<AtomType, string> thisUselessThing = new();
+
+
     public static void AddDerivationRecipe(AtomType input1, AtomType input2, AtomType output)
     {
-        if (input1 == Brimstone.API.VanillaAtoms.salt)
+        thisUselessThing.TryGetValue(input1, out string A);
+        thisUselessThing.TryGetValue(input2, out string B);
+        derivationRecipe.Add(A + B, output);
+        if (!(A == B))
         {
-            derivationRecipe.Add(new Pair<AtomType, AtomType>(input1, input2), output);
-        }
-        else if (input2 == Brimstone.API.VanillaAtoms.salt)
-        {
-            derivationRecipe.Add(new Pair<AtomType, AtomType>(input2, input1), output);
-        }
-        else if (input1 == Brimstone.API.VanillaAtoms.quicksilver)
-        {
-            derivationRecipe.Add(new Pair<AtomType, AtomType>(input1, input2), output);
-        }
-        else if (input2 == Brimstone.API.VanillaAtoms.quicksilver)
-        {
-            derivationRecipe.Add(new Pair<AtomType, AtomType>(input2, input1), output);
-        }
-        else if (input1 == PM.Sulfur && input2 == PM.Sulfur)
-        { //neither are salt or quicksilver, so both sulfur is the only remaining valid option
-            derivationRecipe.Add(new Pair<AtomType, AtomType>(input1, input2), output);
-        }
-        else
-        {
-            Logger.Log("Derivation recipe invalid.");
+            derivationRecipe.Add(B + A, output);
         }
     }
     public static AtomType ReadDeviationRecipe(AtomType input1, AtomType input2)
     {
         AtomType output = MiraculumAtoms.Ignotum; //the default is the unknown atom
-        AtomType Ainput = null;
-        AtomType Binput = null;
-        if (input1 == Brimstone.API.VanillaAtoms.salt)
+        if (!thisUselessThing.TryGetValue(input1, out string A))
         {
-            Ainput = input1;
-            Binput = input2;
+            Logger.Log("This should've been blocked.");
+            return output;
         }
-        else if (input2 == Brimstone.API.VanillaAtoms.salt)
+        if (!thisUselessThing.TryGetValue(input2, out string B))
         {
-            Ainput = input2;
-            Binput = input1;
+            Logger.Log("This should've been blocked.");
+            return output;
         }
-        else if (input1 == Brimstone.API.VanillaAtoms.quicksilver)
-        {
-            Ainput = input1;
-            Binput = input2;
-        }
-        else if (input2 == Brimstone.API.VanillaAtoms.quicksilver)
-        {
-            Ainput = input1;
-            Binput = input2;
-        }
-        else if (input1 == PM.Sulfur && input2 == PM.Sulfur)
-        { //neither are salt or quicksilver, so both sulfur is the only remaining valid option
-            Ainput = input1;
-            Binput = input2;
-        }
-        else
-        {
-            Logger.Log("This should've been blocked before you got here.");
-            Ainput = input1;
-            Binput = input2;
-        }
-        if (!derivationRecipe.TryGetValue(new Pair<AtomType, AtomType>(Ainput, Binput), out output))
+        if (!derivationRecipe.TryGetValue(A + B, out output))
         {
             return MiraculumAtoms.Ignotum;
         }
@@ -95,12 +93,12 @@ public static class API
         {
             return output;
         }
-
     }
     public static readonly Dictionary<AtomType, int[]> atomToCharge = new();
     public static Dictionary<string, AtomType> chargeToAtom = new();
     public static Dictionary<string, AtomType> chargeToAtomQuix = new();
     public static Dictionary<AtomType, AtomType> AnimRootAtom = new();
+    public static readonly Dictionary<AtomType, int> Quixinary = new();
     public static int[] RotateCharge(int[] startingCharge)
     {
         int outMorality = 0; //right
@@ -124,7 +122,7 @@ public static class API
     }
     public static void AddAnimismus(AtomType Atom, int mortality, int morality, AtomType RootAtom)
     {
-        int[] animCharge = new int[] { mortality, morality};
+        int[] animCharge = new int[] { mortality, morality };
         atomToCharge.Add(Atom, animCharge);
         string chargeString = ConvertIntListToStringBecauseTheIntListDoesntWorkForSomeStupidReason(animCharge);
         AnimRootAtom.Add(Atom, RootAtom);
@@ -147,7 +145,8 @@ public static class API
         else if (charge[0] < 0)
         {
             output += "M";
-        } else
+        }
+        else
         {
             output += "X";
         }
@@ -167,4 +166,7 @@ public static class API
         output += Math.Abs(charge[1]).ToString();
         return output;
     }
+
+
+    // helper functions
 }

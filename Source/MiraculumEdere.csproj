@@ -25,8 +25,14 @@
     </ItemDefinitionGroup>
 
 	<ItemGroup>
+		<Reference Include="AlchemicalInversions">
+		  <HintPath>..\..\raw dll\AlchemicalInversions.dll</HintPath>
+		</Reference>
 		<Reference Include="Brimstone">
 		  <HintPath>..\..\raw dll\Brimstone.dll</HintPath>
+		</Reference>
+		<Reference Include="ComplicatedElements">
+		  <HintPath>..\..\raw dll\ComplicatedElements.dll</HintPath>
 		</Reference>
 		<Reference Include="FalseAether">
 		  <HintPath>..\..\raw dll\FalseAether.dll</HintPath>
@@ -58,6 +64,9 @@
 		<Reference Include="Neuvolics">
 		  <HintPath>..\..\raw dll\Neuvolics.dll</HintPath>
 		</Reference>
+		<Reference Include="OMNobleElements">
+		  <HintPath>..\..\raw dll\OMNobleElements.dll</HintPath>
+		</Reference>
 		<Reference Include="PrimaMateria">
 		  <HintPath>..\..\raw dll\PrimaMateria.dll</HintPath>
 		</Reference>
@@ -66,6 +75,9 @@
 		</Reference>
 		<Reference Include="TrueAn">
 		  <HintPath>..\..\raw dll\TrueAn.dll</HintPath>
+		</Reference>
+		<Reference Include="TrueSalt">
+		  <HintPath>..\..\raw dll\TrueSalt.dll</HintPath>
 		</Reference>
 		<Reference Include="UncommonPrimes">
 		  <HintPath>..\..\raw dll\UncommonPrimes.dll</HintPath>
