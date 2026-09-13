@@ -168,5 +168,49 @@ public static class API
     }
 
 
-    // helper functions
+    //concept stolen from Uncommon Alchemical Primes
+    public struct RepositionRecipe
+    {
+        public RepositionRecipe(AtomType inputA, AtomType inputB, AtomType outputA, AtomType outputB)
+        {
+            this.inputA = inputA;
+            this.inputB = inputB;
+            this.outputA = outputA;
+            this.outputB = outputB;
+        }
+        public AtomType inputA;
+        public AtomType inputB;
+        public AtomType outputA;
+        public AtomType outputB;
+    }
+
+    public static List<RepositionRecipe> RepositionTransmutations = new();
+
+    public static bool TryReadReposition(AtomType inputA, AtomType inputB, out AtomType outputA, out AtomType outputB)
+    {
+        //placeholders that should never be recieved
+        outputA = MiraculumAtoms.Ignotum;
+        outputB = MiraculumAtoms.Ignotum;
+        foreach (RepositionRecipe recipe in RepositionTransmutations)
+        {
+            if (recipe.inputA == inputA && recipe.inputB == inputB)
+            {
+                outputA = recipe.outputA;
+                outputB = recipe.outputB;
+                return true;
+            }
+            if (recipe.inputB == inputA && recipe.inputA == inputB) //other way round
+            {
+                outputA = recipe.outputB;
+                outputB = recipe.outputA;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void AddReposition(AtomType inputA, AtomType inputB, AtomType outputA, AtomType outputB)
+    {
+        RepositionTransmutations.Add(new(inputA, inputB, outputA, outputB));
+    }
 }

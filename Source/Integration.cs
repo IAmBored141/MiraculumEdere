@@ -204,5 +204,33 @@ public static class Integration
         TrueSalt.API.addSalinizationRule(CE.Pyrolite, 2);
         TrueSalt.API.addSalinizationRule(CE.Vaprorine, 2);
 
+        //so like I could do it myself ooor i could use other people code
+        TrueSalt.API.addSalinizationRule(ME.Aqua, 2);
+        TrueSalt.API.addSalinizationRule(ME.Ignis, 2);
+        TrueSalt.API.addSalinizationRule(ME.Terra, 2);
+        TrueSalt.API.addSalinizationRule(ME.Caelum, 2);
+
+        API.AddReposition(ME.Temperum, Vanilla.fire, UAP.Bellum, Vanilla.earth);
+        API.AddReposition(ME.Temperum, Vanilla.air, UAP.Bellum, Vanilla.water);
+        API.AddReposition(ME.Temperum, Vanilla.water, UAP.Pax, Vanilla.air);
+        API.AddReposition(ME.Temperum, Vanilla.earth, UAP.Pax, Vanilla.fire);
+
+        API.AddReposition(ME.Humita, Vanilla.fire, UAP.Lux, Vanilla.air);
+        API.AddReposition(ME.Humita, Vanilla.air, UAP.Lux, Vanilla.fire);
+        API.AddReposition(ME.Humita, Vanilla.water, UAP.Obscurum, Vanilla.earth);
+        API.AddReposition(ME.Humita, Vanilla.earth, UAP.Obscurum, Vanilla.water);
+
+        API.AddReposition(ME.Temperum, ME.Ignis, UAP.Bellum, ME.Terra);
+        API.AddReposition(ME.Temperum, ME.Caelum, UAP.Bellum, ME.Aqua);
+        API.AddReposition(ME.Temperum, ME.Aqua, UAP.Pax, ME.Caelum);
+        API.AddReposition(ME.Temperum, ME.Terra, UAP.Pax, ME.Ignis);
+
+        API.AddReposition(ME.Humita, ME.Ignis, UAP.Lux, ME.Caelum);
+        API.AddReposition(ME.Humita, ME.Caelum, UAP.Lux, ME.Ignis);
+        API.AddReposition(ME.Humita, ME.Aqua, UAP.Obscurum, ME.Terra);
+        API.AddReposition(ME.Humita, ME.Terra, UAP.Obscurum, ME.Aqua);
+
+        
+
     }
 }

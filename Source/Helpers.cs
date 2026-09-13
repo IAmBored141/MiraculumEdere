@@ -20,7 +20,13 @@ namespace MiraculumEdere;
 
 public static class Helpers
 {
+     public enum TransmuteAnim
+    {
+        PROJECT = 0,
+        CALCIFY = 1,
+        DUPLICATE = 2
 
+    }
     public static bool PromoteAtom(AtomType startingAtom, int amount, out AtomType output)
     {
         output = null;
@@ -61,9 +67,26 @@ public static class Helpers
             }
         }
     }
+    public static void RunTransmuteAnimation(SolutionEditorBase SEB, AtomReference Atom, TransmuteAnim Anim)
+    {
+        Texture[] tAnim;
+        switch(Anim)
+        {
+            case TransmuteAnim.DUPLICATE:
+                tAnim = Textures.transmuteDupe;
+                break;
+            case TransmuteAnim.CALCIFY:
+                tAnim = Textures.transmuteCalcify;
+                break;
+            default: //hits the PROJECT case
+                tAnim = class_238.field_1989.field_81.field_614;
+                break;
+        }
+        Atom.field_2279.field_2276 = new class_168(SEB, 0, (enum_132)1, Atom.field_2280, tAnim, 30f);
+    }
     public static void RunTransmuteAnimation(SolutionEditorBase SEB, AtomReference Atom)
     {
-        Atom.field_2279.field_2276 = new class_168(SEB, 0, (enum_132)1, Atom.field_2280, class_238.field_1989.field_81.field_614, 30f);
+        RunTransmuteAnimation( SEB, Atom, TransmuteAnim.PROJECT);
     }
 
     public static void DisposeAnimation(HexIndex pos, Part part, SolutionEditorBase SEB)

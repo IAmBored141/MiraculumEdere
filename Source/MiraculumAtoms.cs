@@ -15,7 +15,7 @@ public static class MiraculumAtoms
 {
     public static AtomType Aluminium, Indium, Ferrum, Cerium, Neodynium, Titanium, Ignotum;
     public static AtomType Quickgold, Quickiron, Quicktin, Quicklead;
-    public static AtomType Humita, Temperum, Ignis, Aqua, Terra, Caelum;
+    public static AtomType Humita, Temperum, Ignis, Aqua, Terra, Caelum, Zenithite;
     public static Texture placeholder = Brimstone.API.GetTexture();
     public static void AddAtomTypes()
     {
@@ -120,60 +120,70 @@ public static class MiraculumAtoms
             pathToShade: "textures/atoms/MiraculumEdere/quix/quickgold_shade",
             pathToShadow: "textures/atoms/shadow"
         );
-        Humita = Brimstone.API.CreateNormalAtom(
+        Humita = Brimstone.API.CreateQuintessenceAtom(
             ID: 171,
             modName: "MiraculumEdere",
             name: "Humita",
             pathToSymbol: "textures/atoms/MiraculumEdere/cardinals/humita_symbol",
-            pathToDiffuse: "textures/atoms/salt_diffuse",
-            pathToShade: "textures/atoms/salt_shade",
-            pathToShadow: "textures/atoms/shadow"
+            pathToBase: "textures/atoms/MiraculumEdere/cardinals/humita_base",
+            pathToColors: "textures/atoms/MiraculumEdere/cardinals/humita_base",
+            pathToShadow: "textures/atoms/MiraculumEdere/cardinals/humita_shadow"
         );
-        Temperum = Brimstone.API.CreateNormalAtom(
+        Temperum = Brimstone.API.CreateQuintessenceAtom(
             ID: 172,
             modName: "MiraculumEdere",
             name: "Temperum",
             pathToSymbol: "textures/atoms/MiraculumEdere/cardinals/temperum_symbol",
-            pathToDiffuse: "textures/atoms/salt_diffuse",
-            pathToShade: "textures/atoms/salt_shade",
-            pathToShadow: "textures/atoms/shadow"
+            pathToBase: "textures/atoms/MiraculumEdere/cardinals/temperum_base",
+            pathToColors: "textures/atoms/MiraculumEdere/cardinals/temperum_base",
+            pathToShadow: "textures/atoms/MiraculumEdere/cardinals/temperum_shadow"
         );
         Ignis = Brimstone.API.CreateQuintessenceAtom(
             ID: 173,
             modName: "MiraculumEdere",
             name: "Ignis",
             pathToSymbol: "textures/atoms/MiraculumEdere/cardinals/ignis_symbol",
-            pathToBase: "textures/atoms/elements/fire_base",
-            pathToColors: "textures/atoms/elements/fire_base",
-            pathToShadow: "textures/atoms/elements/fire_shadow"
+            pathToBase: "textures/atoms/MiraculumEdere/cardinals/ignis_base",
+            pathToColors: "textures/atoms/MiraculumEdere/cardinals/ignis_base",
+            pathToShadow: "textures/atoms/MiraculumEdere/cardinals/ignis_shadow"
         );
         Aqua = Brimstone.API.CreateQuintessenceAtom(
             ID: 174,
             modName: "MiraculumEdere",
             name: "Aqua",
             pathToSymbol: "textures/atoms/MiraculumEdere/cardinals/aqua_symbol",
-            pathToBase: "textures/atoms/elements/water_base",
-            pathToColors: "textures/atoms/elements/water_base",
-            pathToShadow: "textures/atoms/elements/water_shadow"
+            pathToBase: "textures/atoms/MiraculumEdere/cardinals/aqua_base",
+            pathToColors: "textures/atoms/MiraculumEdere/cardinals/aqua_base",
+            pathToShadow: "textures/atoms/MiraculumEdere/cardinals/aqua_shadow"
         );
         Terra = Brimstone.API.CreateQuintessenceAtom(
             ID: 175,
             modName: "MiraculumEdere",
             name: "Terra",
             pathToSymbol: "textures/atoms/MiraculumEdere/cardinals/terra_symbol",
-            pathToBase: "textures/atoms/elements/earth_base",
-            pathToColors: "textures/atoms/elements/earth_base",
-            pathToShadow: "textures/atoms/elements/earth_shadow"
+            pathToBase: "textures/atoms/MiraculumEdere/cardinals/terra_base",
+            pathToColors: "textures/atoms/MiraculumEdere/cardinals/terra_base",
+            pathToShadow: "textures/atoms/MiraculumEdere/cardinals/terra_shadow"
         );
         Caelum = Brimstone.API.CreateQuintessenceAtom(
             ID: 176,
             modName: "MiraculumEdere",
             name: "Caelum",
             pathToSymbol: "textures/atoms/MiraculumEdere/cardinals/caelum_symbol",
-            pathToBase: "textures/atoms/elements/air_base",
-            pathToColors: "textures/atoms/elements/air_fog",
-            pathToRimlight: "textures/atoms/elements/air_base2",
-            pathToShadow: "textures/atoms/elements/air_shadow"
+            pathToBase: "textures/atoms/MiraculumEdere/cardinals/caelum_base2",
+            pathToColors: "textures/atoms/MiraculumEdere/cardinals/caelum_fog",
+            pathToRimlight: "textures/atoms/MiraculumEdere/cardinals/caelum_base",
+            pathToShadow: "textures/atoms/MiraculumEdere/cardinals/caelum_shadow"
+        );
+        Zenithite = Brimstone.API.CreateQuintessenceAtom(
+            ID: 177,
+            modName: "MiraculumEdere",
+            name: "Zenithite",  
+            pathToSymbol: "textures/atoms/MiraculumEdere/cardinals/zenithite_symbol",
+            pathToBase: "textures/atoms/MiraculumEdere/cardinals/zenithite_base",
+            pathToColors: "textures/atoms/MiraculumEdere/cardinals/zenithite_colors",
+            pathToRimlight: "textures/atoms/MiraculumEdere/cardinals/zenithite_rimlight",
+            pathToShadow: "textures/atoms/MiraculumEdere/cardinals/zenithite_shadow"
         );
 
         QApi.AddAtomType(Aluminium);
@@ -193,6 +203,7 @@ public static class MiraculumAtoms
         QApi.AddAtomType(Aqua);
         QApi.AddAtomType(Terra);
         QApi.AddAtomType(Caelum);
+        QApi.AddAtomType(Zenithite);
     }
     
 }

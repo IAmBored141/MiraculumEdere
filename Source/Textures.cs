@@ -18,6 +18,8 @@ internal static class Textures
     public static Texture[] glyphEffect = Brimstone.API.GetAnimation("textures/parts/glyph_flash.array", "glyph_flash", 5);
     public static readonly Texture placeholder = Brimstone.API.GetTexture();
 
+    public static readonly Texture[] transmuteCalcify = Brimstone.API.GetAnimation("textures/atoms/calcify_mask.array", "calcify", 6);
+    public static readonly Texture[] transmuteDupe = Brimstone.API.GetAnimation("textures/atoms/duplicate_mask.array", "duplicate", 6);
 
     public static readonly Texture Input_Ring = Brimstone.API.GetTexture("textures/parts/output_ring");
     public static readonly Texture Hole_Shadow = Brimstone.API.GetTexture("textures/parts/output_shadow");
@@ -36,6 +38,10 @@ internal static class Textures
     public static readonly Texture baseShattering = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/shattering/base");
     public static readonly Texture baseRefraction = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/refraction/base");
     public static readonly Texture baseSubjection = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/subjection/base");
+    public static readonly Texture baseAtwix = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/atwix/base");
+    public static readonly Texture baseDissipation = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/dissipation/base");
+    public static readonly Texture baseConcurrence = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/concurrence/base");
+    public static readonly Texture baseReposition = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/reposition/base");
 
     public static readonly Texture subjectUp = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/subjection/arrow_up");
     public static readonly Texture subjectDown = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/subjection/arrow_down");
