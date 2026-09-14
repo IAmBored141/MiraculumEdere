@@ -306,6 +306,8 @@ public static class MiraculumGlyphs
             Helpers.DrawHole(derivationInputB, renderer);
             Brimstone.API.GetRenderingHelpers(part, pos, editor, out PartSimState pss, out PartDataWrapper pdw, out float time);
             Brimstone.API.DrawIris(renderer, pdw, derivationOutput, time, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431);
+            renderer.method_529(Textures.triaPrimae, derivationInputA, Vector2.Zero);
+            renderer.method_529(Textures.triaPrimae, derivationInputB, Vector2.Zero);
 
 
         });

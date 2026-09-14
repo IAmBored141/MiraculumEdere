@@ -55,4 +55,6 @@ internal static class Textures
     public static readonly Texture repos_symbols = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/reposition/symbolRepos");
 
     public static readonly Texture cardinals = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/atwix/cardinals");
+
+    public static readonly Texture triaPrimae = Brimstone.API.GetTexture("textures/parts/PrimaMateria/synthesis/prime_symbol");
 }
