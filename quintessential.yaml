@@ -2,7 +2,7 @@ Name: MiraculumEdere
 Version: 1.0.0
 Title: MiraculumEdere
 Desc: To make a miracle, one must download way to many mods.
-DLL: bin\MiraculumEdere.dll
+DLL: MiraculumEdere.dll
 Dependencies:
   - Name: Quintessential
     Version: 0.6.2

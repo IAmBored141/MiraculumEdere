@@ -45,4 +45,14 @@ internal static class Textures
 
     public static readonly Texture subjectUp = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/subjection/arrow_up");
     public static readonly Texture subjectDown = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/subjection/arrow_down");
+    public static readonly Texture gold_titan = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/deconstruction/gold_titanium");
+    public static readonly Texture second_order = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/ascent/second_order");
+    public static readonly Texture pos_metal = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/conjurgation/pos_metal");
+    public static readonly Texture pos_metal_hole = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/conjurgation/pos_metal_hole");
+    public static readonly Texture vaca_only = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/shattering/vaca");
+    public static readonly Texture judge_A = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/judgement/judgeA");
+    public static readonly Texture judge_B = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/judgement/judgeB");
+    public static readonly Texture repos_symbols = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/reposition/symbolRepos");
+
+    public static readonly Texture cardinals = Brimstone.API.GetTexture("textures/parts/MiraculumEdere/atwix/cardinals");
 }

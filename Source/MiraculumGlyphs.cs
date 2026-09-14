@@ -296,6 +296,8 @@ public static class MiraculumGlyphs
             Brimstone.API.DrawIris(renderer, pdw, conjurgationOutput, time, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431);
             renderer.method_528(Textures.Bowl, conjurgationBuffer, Vector2.Zero);
             Helpers.DrawHole(conjurgationInput, renderer);
+            renderer.method_529(Textures.pos_metal, conjurgationBuffer, Vector2.Zero);
+            renderer.method_529(Textures.pos_metal_hole, conjurgationInput, Vector2.Zero);
         });
         QApi.AddPartType(Derivation, static (part, pos, editor, renderer) =>
         {
@@ -311,6 +313,7 @@ public static class MiraculumGlyphs
         {
             renderer.method_523(Textures.baseAscent, new Vector2(0f, 0f), new Vector2(41f, 48f), 0);
             renderer.method_528(Textures.Bowl, ascentBowl, Vector2.Zero);
+            renderer.method_529(Textures.second_order, ascentBowl, Vector2.Zero);
 
 
         });
@@ -319,6 +322,7 @@ public static class MiraculumGlyphs
             renderer.method_523(Textures.baseDeconstruction, new Vector2(0f, 0f), new Vector2(125f, 48f), 0);
             renderer.method_528(Textures.Bowl, deconInput, Vector2.Zero);
             renderer.method_528(Textures.Bowl, deconMediate, Vector2.Zero);
+            renderer.method_529(Textures.gold_titan, deconInput, Vector2.Zero);
             Brimstone.API.GetRenderingHelpers(part, pos, editor, out PartSimState pss, out PartDataWrapper pdw, out float time);
             Brimstone.API.DrawIris(renderer, pdw, deconOutput, time, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431);
         });
@@ -346,9 +350,11 @@ public static class MiraculumGlyphs
         });
         QApi.AddPartType(Judgement, static (part, pos, editor, renderer) =>
         {
-            renderer.method_523(Textures.baseJudgement, new Vector2(0f, 0f), new Vector2(205f, 48f), 0);
+            renderer.method_523(Textures.baseJudgement, new Vector2(0f, 0f), new Vector2(125f, 48f), 0);
             renderer.method_528(Textures.Bowl, judgementBowlIn, Vector2.Zero);
             renderer.method_528(Textures.Bowl, judgementBowlOut, Vector2.Zero);
+            renderer.method_529(Textures.judge_A, judgementBowlIn, Vector2.Zero);
+            renderer.method_529(Textures.judge_B, judgementBowlOut, Vector2.Zero);
         });
         QApi.AddPartType(Shattering, static (part, pos, editor, renderer) =>
         {
@@ -357,6 +363,7 @@ public static class MiraculumGlyphs
             Brimstone.API.GetRenderingHelpers(part, pos, editor, out PartSimState pss, out PartDataWrapper pdw, out float time);
             Brimstone.API.DrawIris(renderer, pdw, shatterOutAnti, time, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[1]) : struct_18.field_1431);
             Brimstone.API.DrawIris(renderer, pdw, shatterOutLead, time, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431);
+            renderer.method_529(Textures.vaca_only, shatterInput, Vector2.Zero);
         });
 
         QApi.AddPartType(Atwix, static (part, pos, editor, renderer) =>
@@ -367,6 +374,8 @@ public static class MiraculumGlyphs
             Brimstone.API.GetRenderingHelpers(part, pos, editor, out PartSimState pss, out PartDataWrapper pdw, out float time);
             Brimstone.API.DrawIris(renderer, pdw, atwixOutA, time, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431);
             Brimstone.API.DrawIris(renderer, pdw, atwixOutB, time, pss.field_2743 ? Brimstone.API.ConvertToMaybe(pss.field_2744[0]) : struct_18.field_1431);
+            renderer.method_529(Textures.cardinals, atwixInA, Vector2.Zero);
+            renderer.method_529(Textures.cardinals, atwixInB, Vector2.Zero);
         });
 
         QApi.AddPartType(Refraction, static (part, pos, editor, renderer) =>
@@ -419,6 +428,9 @@ public static class MiraculumGlyphs
             renderer.method_523(Textures.baseReposition, new Vector2(0f, 0f), new Vector2(123f, 48f), 0);
             renderer.method_528(Textures.Bowl, RepositionA, Vector2.Zero);
             renderer.method_528(Textures.Bowl, RepositionB, Vector2.Zero);
+            renderer.method_529(Textures.repos_symbols, RepositionA, Vector2.Zero);
+            renderer.method_529(Textures.repos_symbols, RepositionB, Vector2.Zero);
+
         });
 
         QApi.AddPartType(Dissipation, static (part, pos, editor, renderer) =>
